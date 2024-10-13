@@ -12,8 +12,6 @@ function Register() {
     state: '',
     country: '',
     mobile: '',
-    relativeName: '',
-    relativeMobile: '',
     illnessDetails: '',
     password: '',
     confirmPassword: '',
@@ -84,14 +82,6 @@ function Register() {
           <label htmlFor="mobile">Mobile*</label>
           <input type="text" name="mobile" placeholder="Mobile" onChange={handleChange} required />
         </div>
-        <div className="form-group">
-          <label htmlFor="relativeName">Relative Name*</label>
-          <input type="text" name="relativeName" placeholder="Relative Name" onChange={handleChange} />
-        </div>
-        <div className="form-group">
-          <label htmlFor="relativeMobile">Relative Mobile*</label>
-          <input type="text" name="relativeMobile" placeholder="Relative Mobile" onChange={handleChange} />
-        </div>
         <div className="form-group full-width">
           <label htmlFor="illnessDetails">Illness Details*</label>
           <textarea name="illnessDetails" placeholder="Existing Illness" onChange={handleChange} required></textarea>
@@ -110,4 +100,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default Register

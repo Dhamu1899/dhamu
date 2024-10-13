@@ -13,8 +13,8 @@ const AdminLandingScreen = () => {
   const [newAdmin, setNewAdmin] = useState('');
   const [appointmentDetails, setAppointmentDetails] = useState('');
 
-  const handleAddPatient = () => {
-    navigate("/Components/AddPatient")
+  const handleUpdatePatient = () => {
+    navigate("/Components/UpdatePatient")
   };
 
   const handleAddDoctor = () => {
@@ -48,7 +48,7 @@ const AdminLandingScreen = () => {
         <ul>
           <li>
             
-            <button onClick={handleAddPatient}>Add Patient</button>
+            <button onClick={handleUpdatePatient}>Update Patient</button>
           </li>
           <li>
            

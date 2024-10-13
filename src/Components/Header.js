@@ -6,7 +6,7 @@ import PatientLogin from './PatientLogin';
 import AdminLogin from './AdminLogin';
 import Register from './Register';
 import AddDoctor from './AddDoctor';
-import AddPatient from './AddPatient';
+import UpdatePatient from './UpdatePatient';
 import PatientDashboard from './PatientDashboard';
 import FindDoctor from './FindDoctor';
 import Navbar from './Navbar'; // Import the Nav component
@@ -20,7 +20,7 @@ const  Header = () => {
         <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/register" element={<Register />} />
         <Route path="/add-doctor" element={<AddDoctor />} />
-        <Route path="/add-patient" element={<AddPatient />} />
+        <Route path="/Update-patient" element={<UpdatePatient />} />
         <Route path="/patient-dashboard" element={<PatientDashboard />} />
         <Route path="/find-doctor" element={<FindDoctor />} />
       </Routes>

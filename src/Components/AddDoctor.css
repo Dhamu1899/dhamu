@@ -1,9 +1,10 @@
 /* src/AddDoctor.css */
-.add-doctor-container{
+.add-doctor-container {
     margin: 20px;
-   
 }
-.doctor-container{
+
+/* Doctor form container */
+.doctor-container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -12,48 +13,86 @@
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.doctor-container h2{
+
+/* Form heading */
+.doctor-container h2 {
     text-align: center;
+    margin-bottom: 20px; /* Space between heading and form */
 }
+
+/* Form layout */
 .doctor-container form {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-.doctors-list-container h2{
+}
+
+/* Subheading for doctors list */
+.doctors-list-container h2 {
     text-align: center;
 }
 
+/* General form heading style */
 .form-heading {
     font-size: 24px; /* Adjust the size as necessary */
     margin-bottom: 20px; /* Space between heading and the next element */
 }
-form div{
+
+/* Spacing between form elements */
+form div {
     margin-bottom: 10px;
 }
-input{
+
+/* Input field styles */
+input {
     padding: 8px;
-    width: 300px;
+    width: 300px; /* Width of input fields */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+    transition: border-color 0.3s; /* Smooth transition for border color */
 }
-.doctor-container button{
+
+/* Button styles */
+.doctor-container button {
     width: 200px;
     padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border:none;
-    cursor: pointer;
-    text-align: center;
-    border-radius: 5px;
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer on hover */
+    text-align: center; /* Centered text */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
 
+/* Button hover effect */
+.doctor-container button:hover {
+    background-color: #45a049; /* Darker green on hover */
 }
-table{
-    width:100%;
-    border-collapse: collapse;
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Remove double borders */
+    margin-top: 20px; /* Space above the table */
 }
-table th, table td{
-    padding: 12px;
-    border: 1px solid #ddd;
+
+/* Table headers and data */
+table th,
+table td {
+    padding: 12px; /* Padding inside cells */
+    border: 1px solid #ddd; /* Border around cells */
+    text-align: left; /* Left aligned text */
 }
-table th{
-    background-color: #f4f4f4;
+
+/* Table header background color */
+table th {
+    background-color: #f4f4f4; /* Light gray background for headers */
+}
+
+/* No doctors found message */
+.no-doctors-message {
+    text-align: center;
+    font-size: 18px;
+    color: #888; /* Gray color for message */
 }

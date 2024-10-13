@@ -46,4 +46,3 @@ function PatientLogin() {
   )
 }
 export default PatientLogin;
-

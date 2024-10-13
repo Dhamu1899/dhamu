@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PatientLandingScreen from './Pages/PatientLandingScreen';
 import AdminLandingScreen from './Pages/AdminLandingScreen';
-import AddPatient from './Components/AddPatient';
+import UpdatePatient from './Components/UpdatePatient';
 import AddDoctor from './Components/AddDoctor';
 import Header from './Components/Header';
 import HomePage from './Components/HomePage';
@@ -24,7 +24,7 @@ const App = () => {
         <Route path="/Pages/Patientlandingscreen" element={<PatientLandingScreen />} />
         <Route path="/Pages/AdminLandingscreen" element={<AdminLandingScreen />} />
         <Route path="/Components/AddDoctor" element={<AddDoctor />} />
-        <Route path="/Components/AddPatient" element={<AddPatient />} />
+        <Route path="/Components/UpdatePatient" element={<UpdatePatient />} />
         <Route path="/Components/FindDoctor" element={<FindDoctor />} />
       </Routes>
       <Footer />
