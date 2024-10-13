@@ -1,0 +1,74 @@
+.achievements-section {
+  margin-bottom: 4rem; 
+  text-align: center;
+  background-color: #f0f4ff; /* Light background for the section */
+  padding: 2rem; /* Padding around the section */
+  border-radius: 0.5rem; /* Rounded corners for the section */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for the section */
+}
+
+.achievement-card {
+  background-color: #ffffff; /* Card background */
+  border-radius: 0.5rem; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for the card */
+  padding: 1.5rem; /* Inner padding */
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s; /* Transition for hover effect */
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.seal-image {
+  width: 80px; /* Width of the seal image */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 1rem; /* Space below the image */
+}
+
+.text-primary {
+  color: #1d4ed8; /* Primary color for titles */
+  font-weight: bold; /* Bold weight for emphasis */
+}
+
+.text-gray-600 {
+  color: #4b5563; /* Gray color for text */
+}
+
+.achievement-title {
+  font-size: 1.5rem; /* Larger font size for titles */
+  margin-bottom: 0.5rem; /* Space below title */
+  letter-spacing: 0.5px; /* Slight letter spacing for readability */
+}
+
+.achievement-year {
+  font-size: 1.1rem; /* Slightly larger font size for the year */
+  color: #6b7280; /* Softer gray for year text */
+}
+
+.description {
+  color: #333; /* Darker color for description text */
+  font-size: 0.9rem; /* Slightly smaller font size for description */
+  margin-top: 0.5rem; /* Space above description */
+  line-height: 1.5; /* Improved line height for readability */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .achievements-section {
+      padding: 1rem; /* Reduced padding for smaller screens */
+  }
+
+  .achievement-card {
+      padding: 1rem; /* Reduced padding for cards on smaller screens */
+  }
+
+  .achievement-title {
+      font-size: 1.25rem; /* Smaller title on mobile */
+  }
+
+  .achievement-year {
+      font-size: 1rem; /* Smaller year text on mobile */
+  }
+}

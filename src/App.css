@@ -1,0 +1,70 @@
+/* General App Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9; /* Light background color */
+}
+
+.hospital-management {
+  display: flex;
+  flex-direction: column; /* Allows stacking of content vertically */
+  min-height: 100vh; /* Full viewport height */
+}
+
+main {
+  flex: 1; /* Allows main to grow and fill the space */
+  padding: 20px; /* Standard padding */
+}
+
+/* Link Styling for the App */
+a {
+  color: #4a90e2; /* Main link color */
+  text-decoration: none; /* Removes underline */
+  font-weight: bold; /* Bold links */
+}
+
+a:hover {
+  color: #357ab8; /* Darker blue on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Button Styling */
+button {
+  background-color: #4a90e2; /* Primary button color */
+  color: white; /* Button text color */
+  border: none; /* Remove default border */
+  padding: 10px 20px; /* Button padding */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+  background-color: #96bfe3; /* Darker background on hover */
+}
+
+button:disabled {
+  background-color: #ccc; /* Greyed out for disabled state */
+  cursor: not-allowed; /* Change cursor style */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    padding: 10px; /* Smaller padding on smaller screens */
+  }
+  
+  header h1 {
+    font-size: 20px; /* Adjust header font size */
+  }
+
+  button {
+    padding: 8px 16px; /* Adjust button size on smaller screens */
+    font-size: 14px; /* Smaller font for buttons */
+  }
+  
+  a {
+    font-size: 14px; /* Slightly smaller link font size */
+  }
+}

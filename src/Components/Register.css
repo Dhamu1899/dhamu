@@ -1,0 +1,92 @@
+.body {
+    background-color: rgb(214, 212, 212);
+    text-align: center;
+}
+
+.register-container {
+    margin-top: 20px;
+    margin: auto;
+    padding: 10px 20px;
+    transition: transform 0.2s;
+    width: 90%; /* Use more width in landscape mode */
+    max-width: 900px; /* Allow maximum width for large screens */
+    text-align: center;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.register-container h2 {
+    text-align: center;
+    color: #4a90e2;
+    font-size: x-large;
+}
+
+label {
+    font-size: 15px;
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #555;
+    font-weight: bold;
+}
+
+.register-container form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.form-group {
+    width: 45%; /* Adjust width for two columns */
+}
+
+.full-width {
+    width: 100%;
+}
+
+.register-container input[type="text"],
+.register-container input[type="password"],
+.register-container input[type="date"],
+.register-container input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 12px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.register-container button {
+    padding: 10px 15px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    width: 100%;
+    max-width: 200px;
+    border-radius: 6px;
+    margin: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-container button:hover {
+    background-color: #357ab8;
+}
+
+@media (max-width: 768px) {
+    .form-group {
+        width: 100%;
+    }
+}

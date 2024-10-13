@@ -1,0 +1,85 @@
+Nav.css
+.nav-container {
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin: auto;
+}
+
+.nav-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-container ul li {
+  display: inline;
+  margin-right: 15px;
+}
+
+.nav-container ul li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.nav-container ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Navbar.css */
+.nav-container {
+  margin-top: 0%;
+  display: flex;
+  justify-content: space-between; /* Aligns items to the ends */
+  align-items: center; /* Centers items vertically */
+  background-color: #2d3748; /* A professional blue */
+  padding: 10px ; /* More padding for better appearance */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.nav-container ul {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0;
+  display: flex; /* Displays items in a row */
+}
+
+.nav-container ul li {
+  margin-right: 30px; /* More space between items */
+}
+
+.nav-container ul li a {
+  text-decoration: none;
+  color:black; /* White text for contrast */
+  font-weight: bold; /* Makes the text bold */
+  padding: 10px 15px; /* Adds padding around links */
+  border-radius: 4px; /* Rounded corners for links */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.nav-container ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Slightly lighter background on hover */
+  border-radius: 4px; /* Consistent rounded corners */
+}
+
+/* Optional: Add a logo section */
+.logo {
+  color: white;
+  font-size: 24px; /* Larger font size for logo */
+  font-weight: bold; /* Bold font for logo */
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column; /* Stacks items on smaller screens */
+    align-items: flex-start; /* Aligns items to the start */
+  }
+  
+  .nav-container ul {
+    flex-direction: column; /* Stack the links vertically */
+    width: 100%; /* Full width for mobile */
+  }
+  
+  .nav-container ul li {
+    margin-right: 0; /* Removes horizontal margin */
+    margin-bottom: 10px; /* Adds margin below items */
+  }
+}

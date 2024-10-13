@@ -1,0 +1,113 @@
+/* HomePage.css */
+
+.container {
+    max-width: 1200px; /* Maximum width of the container */
+    margin: 0 auto; /* Center the container */
+    padding: 0 30px; /* Increased padding on left and right */
+    text-align: center; /* Center-align text */
+}
+
+.mb-16 {
+    margin-bottom: 5rem; /* Increased bottom margin for more spacing */
+}
+
+.grid {
+    display: grid; /* Use grid layout */
+}
+
+.md\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr); /* For medium screens, 2 columns */
+}
+
+.md\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr); /* For medium screens, 3 columns */
+}
+
+.gap-8 {
+    gap: 2.5rem; /* Increased gap between grid items */
+}
+
+.items-center {
+    align-items: center; /* Center items vertically */
+}
+
+.rounded-lg {
+    border-radius: 0.75rem; /* Slightly larger rounded corners */
+}
+
+.shadow-lg {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Softer shadow effect */
+}
+
+.text-3xl {
+    font-size: 2rem; /* Slightly larger font size for headers */
+}
+
+.font-bold {
+    font-weight: 600; /* Slightly less bold for a more sophisticated look */
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem; /* Increased bottom margin for spacing */
+}
+
+.text-primary {
+    color: #2c3e50; /* Change to a deeper primary color */
+}
+
+.text-gray-700 {
+    color: #7f8c8d; /* Softer gray text color */
+}
+
+.bg-primary {
+    background-color: #2980b9; /* A more muted primary background color */
+}
+
+.text-white {
+    color: #ecf0f1; /* Soft white text color */
+}
+
+.px-6 {
+    padding-left: 2rem; /* Increased padding left */
+    padding-right: 2rem; /* Increased padding right */
+}
+
+.py-2 {
+    padding-top: 0.75rem; /* Increased padding top */
+    padding-bottom: 0.75rem; /* Increased padding bottom */
+}
+
+.rounded-md {
+    border-radius: 0.5rem; /* Slightly larger rounded corners */
+}
+
+.text-lg {
+    font-size: 1.25rem; /* Increased large font size */
+}
+
+.font-medium {
+    font-weight: 500; /* Medium font weight remains */
+}
+
+.w-full {
+    width: 100%; /* Full width */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(1, 1fr); /* Stacking columns on smaller screens */
+    }
+
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr); /* Stacking columns on smaller screens */
+    }
+
+    .text-3xl {
+        font-size: 1.75rem; /* Adjusted font size for smaller screens */
+    }
+
+    .mb-16 {
+        margin-bottom: 3rem; /* Adjusted bottom margin for smaller screens */
+    }
+}

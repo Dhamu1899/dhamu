@@ -1,0 +1,11 @@
+.header-container{
+    background-color: whitesmoke;
+    text-align: center;
+    color:black;
+
+  
+  }
+  .header-container h1{
+    margin: 0;
+    font-size: 24px;
+  }
