@@ -1,48 +1,73 @@
+/* BookingAppointment.css */
+
 .booking-form {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
+    background-color: #ffffff; /* Changed to white for better contrast */
+    padding: 25px; /* Increased padding for better spacing */
+    border-radius: 8px; /* Rounded corners */
     border: 1px solid #ddd;
     max-width: 400px;
     margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .booking-form h2 {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+.booking-form:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+.booking-form h2 {
     margin-top: 0;
     margin-bottom: 20px;
-    font-size: 1.5em;
+    font-size: 1.75em; /* Slightly larger font size */
     color: #333;
-  }
-  .booking-form label{
-    display:block;
+    text-align: center; /* Centered title */
+}
+
+.booking-form label {
+    display: block;
     margin-bottom: 8px;
     font-weight: bold;
-  }
-  .booking-form input[type="date"],
-  .booking-form select {
+}
+
+.booking-form input[type="date"],
+.booking-form select {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
+    padding: 12px; /* Increased padding for inputs */
+    margin-bottom: 20px; /* Increased margin for better spacing */
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-  }
-  .booking-form button {
-    margin-right: 10px;
-    background-color: #28a745;
+    font-size: 16px; /* Increased font size for better readability */
+}
+
+.booking-form .button-container {
+    display: flex;
+    justify-content: space-between; /* Space buttons evenly */
+}
+
+.booking-form button {
+    flex: 1; /* Buttons will take equal width */
+    margin: 0 5px; /* Margin between buttons */
+    background-color: #28a745; /* Green for book button */
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 0; /* Consistent padding */
     border-radius: 4px;
-    cursor:pointer;
-  }
-  .booking-form button:hover{
-    background-color: #218838;
-  }
-  .booking-form button:last-child{
-    background-color: #dc3545;
-  }
-  .booking-form button:last-child:hover{
-    background-color: #c82333;
-  }
+    cursor: pointer;
+    font-size: 16px; /* Increased font size for buttons */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.booking-form button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.booking-form button:last-child {
+    background-color: #dc3545; /* Red for cancel button */
+}
+
+.booking-form button:last-child:hover {
+    background-color: #c82333; /* Darker red on hover */
+}

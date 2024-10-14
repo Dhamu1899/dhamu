@@ -10,7 +10,8 @@ const FindDoctor = () => {
   const [appointmentDate, setAppointmentDate] = useState('');
   const [appointmentTime, setAppointmentTime] = useState('');
   const [appointmentDetails, setAppointmentDetails] = useState(null);
-  const [appointments, setAppointments] = useState([]); // State to hold all appointments
+  const [appointments, setAppointments] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
 
   useEffect(() => {
     const savedPatients = JSON.parse(localStorage.getItem('patients')) || [];
@@ -20,16 +21,16 @@ const FindDoctor = () => {
     setDoctorList(savedDoctors);
 
     const savedAppointments = JSON.parse(localStorage.getItem('appointments')) || [];
-    setAppointments(savedAppointments); // Load all appointments from local storage
+    setAppointments(savedAppointments);
   }, []);
 
   const handlePatientSelect = (patient) => {
     setSelectedPatient(patient);
-
     const doctorsInSameLocation = doctorList.filter(
       (doctor) => doctor.location.toLowerCase() === patient.location.toLowerCase()
     );
     setFilteredDoctors(doctorsInSameLocation);
+    setIsModalOpen(true); // Open the modal when a patient is selected
   };
 
   const handleDoctorChange = (e) => {
@@ -44,6 +45,7 @@ const FindDoctor = () => {
     }
 
     const newAppointment = {
+      patientId: selectedPatient.uniqueId, // Store patient ID for booking history
       patient: selectedPatient.firstName,
       illnessDetails: selectedPatient.illnessDetails,
       doctor: selectedDoctor,
@@ -52,21 +54,13 @@ const FindDoctor = () => {
       location: selectedPatient.location,
     };
 
-    // Store the appointment details in local storage
     const existingAppointments = JSON.parse(localStorage.getItem('appointments')) || [];
     existingAppointments.push(newAppointment);
     localStorage.setItem('appointments', JSON.stringify(existingAppointments));
-    setAppointments(existingAppointments); // Update appointments state
-
+    setAppointments(existingAppointments);
     setAppointmentDetails(newAppointment);
     alert(`Appointment booked successfully for ${newAppointment.patient} with ${newAppointment.doctor} on ${newAppointment.date} at ${newAppointment.time}`);
 
-    const appointmentSection = document.getElementById('appointment-details');
-    if (appointmentSection) {
-      appointmentSection.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Remove the booked patient from the list
     const updatedPatients = patients.filter(p => p.uniqueId !== selectedPatient.uniqueId);
     setPatients(updatedPatients);
     localStorage.setItem('patients', JSON.stringify(updatedPatients));
@@ -76,6 +70,7 @@ const FindDoctor = () => {
     setSelectedDoctor('');
     setAppointmentDate('');
     setAppointmentTime('');
+    setIsModalOpen(false); // Close the modal after booking
   };
 
   const handleDeletePatient = (uniqueId) => {
@@ -88,101 +83,86 @@ const FindDoctor = () => {
     }
   };
 
+  const patientAppointments = appointments.filter(appointment => appointment.patientId === selectedPatient?.uniqueId); // Filter appointments by selected patient
+
   return (
     <div className="find-doctor-container">
       <h2>Find a Doctor & Book Appointment</h2>
 
-      {/* Patient List Section (Hidden after booking) */}
-      {!appointmentDetails && (
-        <div className="patient-list-section">
-          <h3>Select a Patient</h3>
-          {patients.length === 0 ? (
-            <p>No patients available. Please add a patient first.</p>
-          ) : (
-            <table>
-              <thead>
-                <tr>
-                  <th>Unique ID</th>
-                  <th>First Name</th>
-                  <th>Illness Details</th>
-                  <th>Location</th>
-                  <th>State</th>
-                  <th>Country</th>
-                  <th>Mobile</th>
-                  <th>Action</th>
+      {/* Patient List Section */}
+      <div className="patient-list-section">
+        <h3>Select a Patient</h3>
+        {patients.length === 0 ? (
+          <p>No patients available. Please add a patient first.</p>
+        ) : (
+          <table>
+            <thead>
+              <tr>
+                <th>Unique ID</th>
+                <th>First Name</th>
+                <th>Illness Details</th>
+                <th>Location</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {patients.map((patient) => (
+                <tr key={patient.uniqueId}>
+                  <td>{patient.uniqueId}</td>
+                  <td>{patient.firstName}</td>
+                  <td>{patient.illnessDetails}</td>
+                  <td>{patient.location}</td>
+                  <td>
+                    <button onClick={() => handlePatientSelect(patient)}>Find Doctor</button>
+                    <button onClick={() => handleDeletePatient(patient.uniqueId)}>Delete</button>
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {patients.map((patient) => (
-                  <tr key={patient.uniqueId}>
-                    <td>{patient.uniqueId}</td>
-                    <td>{patient.firstName}</td>
-                    <td>{patient.illnessDetails}</td>
-                    <td>{patient.location}</td>
-                    <td>{patient.state}</td>
-                    <td>{patient.country}</td>
-                    <td>{patient.mobile}</td>
-                    <td>
-                      {!appointmentDetails && (
-                        <button onClick={() => handlePatientSelect(patient)}>
-                          Find Doctor
-                        </button>
-                      )}
-                      <button onClick={() => handleDeletePatient(patient.uniqueId)}>
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
-        </div>
-      )}
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
 
-      {/* Book Appointment Section */}
-      {selectedPatient && (
-        <div className="appointment-section">
-          <h3>Book First Appointment</h3>
-          <form onSubmit={handleAppointmentSubmit}>
-            <p>Selected Patient: {`${selectedPatient.firstName}`}</p>
-            <p>Location: {`${selectedPatient.location}`}</p>
-            <p>Illness Details: {`${selectedPatient.illnessDetails}`}</p>
+      {/* Modal for Booking Appointment */}
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h3>Book Appointment for {selectedPatient.firstName}</h3>
+            <form onSubmit={handleAppointmentSubmit}>
+              <label htmlFor="doctor">Select Doctor*</label>
+              <select value={selectedDoctor} onChange={handleDoctorChange} required>
+                <option value="">--Select Doctor--</option>
+                {filteredDoctors.length > 0 ? (
+                  filteredDoctors.map((doctor) => (
+                    <option key={doctor.id} value={doctor.name}>
+                      {doctor.name} - {doctor.specialty}
+                    </option>
+                  ))
+                ) : (
+                  <option value="" disabled>No doctors available in this location</option>
+                )}
+              </select>
 
-            <label htmlFor="doctor">Select Doctor*</label>
-            <select value={selectedDoctor} onChange={handleDoctorChange} required>
-              <option value="">--Select Doctor--</option>
-              {filteredDoctors.length > 0 ? (
-                filteredDoctors.map((doctor) => (
-                  <option key={doctor.id} value={doctor.name}>
-                    {doctor.name} - {doctor.specialty}
-                  </option>
-                ))
-              ) : (
-                <option value="" disabled>
-                  No doctors available in this location
-                </option>
-              )}
-            </select>
+              <label htmlFor="appointmentDate">Appointment Date*</label>
+              <input
+                type="date"
+                value={appointmentDate}
+                onChange={(e) => setAppointmentDate(e.target.value)}
+                required
+              />
 
-            <label htmlFor="appointmentDate">Appointment Date*</label>
-            <input
-              type="date"
-              value={appointmentDate}
-              onChange={(e) => setAppointmentDate(e.target.value)}
-              required
-            />
+              <label htmlFor="appointmentTime">Appointment Time*</label>
+              <input
+                type="time"
+                value={appointmentTime}
+                onChange={(e) => setAppointmentTime(e.target.value)}
+                required
+              />
 
-            <label htmlFor="appointmentTime">Appointment Time*</label>
-            <input
-              type="time"
-              value={appointmentTime}
-              onChange={(e) => setAppointmentTime(e.target.value)}
-              required
-            />
-
-            <button type="submit">Book Appointment</button>
-          </form>
+              <button type="submit">Book Appointment</button>
+              <button type="button" onClick={() => setIsModalOpen(false)}>Cancel</button>
+            </form>
+          </div>
         </div>
       )}
 
@@ -199,30 +179,26 @@ const FindDoctor = () => {
         </div>
       )}
 
-      {/* Display All Appointments (Optional Section) */}
-      {appointments.length > 0 && (
-        <div className="all-appointments-section">
-          <h3>All Booked Appointments</h3>
+      {/* Booking History Section */}
+      {selectedPatient && patientAppointments.length > 0 && (
+        <div className="booking-history-section">
+          <h3>Booking History for {selectedPatient.firstName}</h3>
           <table>
             <thead>
               <tr>
-                <th>Patient Name</th>
                 <th>Doctor</th>
                 <th>Date</th>
                 <th>Time</th>
                 <th>Location</th>
-                <th>Illness Details</th>
               </tr>
             </thead>
             <tbody>
-              {appointments.map((appointment, index) => (
+              {patientAppointments.map((appointment, index) => (
                 <tr key={index}>
-                  <td>{appointment.patient}</td>
                   <td>{appointment.doctor}</td>
                   <td>{appointment.date}</td>
                   <td>{appointment.time}</td>
                   <td>{appointment.location}</td>
-                  <td>{appointment.illnessDetails}</td>
                 </tr>
               ))}
             </tbody>

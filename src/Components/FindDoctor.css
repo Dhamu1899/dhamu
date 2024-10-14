@@ -1,4 +1,6 @@
-.find-doctor-container{
+/* FindDoctor.css */
+
+.find-doctor-container {
     max-width: 100%;
     margin: 0 auto;
     padding: 20px;
@@ -6,65 +8,86 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.find-doctor-container h2{
+
+.find-doctor-container h2 {
     text-align: center;
     color: #333;
 }
+
 .find-doctor-container label {
     display: block;
     margin-bottom: 15px;
     color: #555;
     font-weight: bold;
 }
-.find-doctor-container input[type="text"] {
+
+.find-doctor-container table {
     width: 100%;
-    padding:10px;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.find-doctor-container th, .find-doctor-container td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.find-doctor-container button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.find-doctor-container button:hover {
+    background-color: #0056b3;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure modal is on top */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+}
+
+.modal-content input[type="date"],
+.modal-content input[type="time"],
+.modal-content select {
+    width: 100%;
+    padding: 10px;
     margin-top: 5px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
     box-sizing: border-box;
 }
-.find-doctor-container button{
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color:white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
+
+.modal-content button {
+    display: inline-block;
     margin-top: 10px;
-}
-.find-doctor-container button:hover{
-    background-color: #0056b3;
-}
-.find-doctor-container ul{
-    list-style-type: none;
-    padding: 0;
-    margin-top: 20px;
-}
-.find-doctor-container li {
-    background-color: #fff;
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.find-doctor-container li button{
-    width: auto;
-    padding: 5px 10px;
-    background-color: #28a745;
-    color:white
-}
-.find-doctor-container li button:hover{
-    background-color: #218838;
-}
-.booking-form-container{
-    position: fixed;
-    
+    margin-right: 10px;
 }

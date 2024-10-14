@@ -1,4 +1,4 @@
-.body {
+body {
     background-color: rgb(214, 212, 212);
     text-align: center;
 }
@@ -6,11 +6,9 @@
 .register-container {
     margin-top: 20px;
     margin: auto;
-    padding: 10px 20px;
-    transition: transform 0.2s;
+    padding: 20px; /* Increased padding for better spacing */
     width: 90%; /* Use more width in landscape mode */
     max-width: 900px; /* Allow maximum width for large screens */
-    text-align: center;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
@@ -25,7 +23,6 @@
 label {
     font-size: 15px;
     display: block;
-    width: 100%;
     margin-top: 8px;
     margin-bottom: 5px;
     text-align: left;
@@ -36,12 +33,13 @@ label {
 .register-container form {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
+    gap: 20px; /* Space between elements */
+    justify-content: space-between; /* Space elements evenly */
 }
 
 .form-group {
-    width: 45%; /* Adjust width for two columns */
+    width: 48%; /* Adjusted width to allow two columns with some spacing */
+    min-width: 240px; /* Minimum width for smaller screens */
 }
 
 .full-width {
@@ -55,7 +53,7 @@ label {
     display: block;
     width: 100%;
     box-sizing: border-box;
-    font-size: 12px;
+    font-size: 14px; /* Slightly larger font for better readability */
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -76,7 +74,7 @@ textarea {
     width: 100%;
     max-width: 200px;
     border-radius: 6px;
-    margin: 15px;
+    margin: 15px auto; /* Center button */
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -87,6 +85,22 @@ textarea {
 
 @media (max-width: 768px) {
     .form-group {
-        width: 100%;
+        width: 100%; /* Stacks form groups in a single column on smaller screens */
+    }
+}
+
+/* Optional: Additional styling for better layout */
+.register-container {
+    padding: 30px; /* Increase padding for better spacing */
+}
+
+.form-group {
+    margin: 10px 0; /* Add margin between form groups for better separation */
+}
+
+/* Add media queries for smaller devices */
+@media (max-width: 600px) {
+    .register-container {
+        padding: 20px; /* Adjust padding on smaller screens */
     }
 }
