@@ -10,6 +10,7 @@ import UpdatePatient from './UpdatePatient';
 import PatientDashboard from './PatientDashboard';
 import BookingAppointment from './BookingAppointment'
 import FindDoctor from './FindDoctor';
+import AddAdmin from './AddAdmin';
 import Navbar from './Navbar'; // Import the Nav component
 const  Header = () => {
   return (
@@ -25,6 +26,7 @@ const  Header = () => {
         <Route path="/patient-dashboard" element={<PatientDashboard />} />
         <Route path="/BookingAppointment" element={<BookingAppointment />} />
         <Route path="/find-doctor" element={<FindDoctor />} />
+        <Route path="/AddAdmin" element={<AddAdmin />} />
       </Routes>
     </div>
   );

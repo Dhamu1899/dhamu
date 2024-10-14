@@ -12,6 +12,7 @@ import Service from './Pages/Service';
 import Contact from './Pages/Contact';
 import BookingAppointment from './Components/BookingAppointment';
 import FindDoctor from './Components/FindDoctor';
+import AddAdmin from './Components/AddAdmin';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/Components/UpdatePatient" element={<UpdatePatient />} />
         <Route path="/Components/BookingAppointment" element={<BookingAppointment />} />
         <Route path="/Components/FindDoctor" element={<FindDoctor />} />
+        <Route path="/Components/AddAdmin" element={<AddAdmin />} />
       </Routes>
       <Footer />
     </div>

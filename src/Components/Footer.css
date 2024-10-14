@@ -1,79 +1,88 @@
 /* Footer.css */
+
 .footer {
-   background-color: #2d3748; /* gray-800 */
-   color: white;
-   padding: 2rem 0;
- }
- 
- .container {
-   max-width: 1200px; /* Adjust as needed */
-   margin: 0 auto;
-   padding: 0 1rem;
- }
- 
- .grid {
-   display: grid;
-   grid-template-columns: repeat(1, 1fr);
-   gap: 2rem;
- }
- 
- @media (min-width: 768px) {
-   .grid {
-     grid-template-columns: repeat(4, 1fr);
-   }
- }
- 
- .footer-section {
-   margin-bottom: 1rem;
- }
- 
- .footer-title {
-   font-size: 1.25rem;
-   font-weight: bold;
-   margin-bottom: 1rem;
- }
- 
- .footer-description,
- .footer-contact {
-   font-size: 0.875rem; /* text-sm */
- }
- 
- .footer-links {
-   list-style-type: none;
-   padding: 0;
- }
- 
- .footer-link {
-   color: white;
-   text-decoration: none;
- }
- 
- .footer-link:hover {
-   color: #4299e1; /* Primary color on hover */
- }
- 
- .social-links {
-   display: flex;
-   gap: 1rem;
- }
- 
- .social-link {
-   color: white;
-   transition: color 0.2s;
- }
- 
- .social-link:hover {
-   color: #4299e1; /* Primary color on hover */
- }
- 
- .footer-bottom {
-   margin-top: 2rem;
-   padding-top: 2rem;
-   border-top: 1px solid #4a5568; /* gray-700 */
-   text-align: center;
- }
- 
- .footer-bottom p {
-   font-size: 0.875rem; /* text-sm */
- }
- 
+  background-color: #2d3748; /* gray-800 */
+  color: white;
+  padding: 3rem 0; /* Increased padding for better spacing */
+  font-family: 'Arial', sans-serif; /* Improved font choice */
+}
+
+.container {
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.footer-section {
+  margin-bottom: 1.5rem; /* Slightly increased spacing */
+}
+
+.footer-title {
+  font-size: 1.5rem; /* Larger font size for better visibility */
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* Reduced margin for a tighter look */
+  text-transform: uppercase; /* Added uppercase for emphasis */
+}
+
+.footer-description,
+.footer-contact {
+  font-size: 0.9rem; /* Increased size for better readability */
+  line-height: 1.5; /* Improved line height */
+}
+
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s; /* Smooth transition on hover */
+}
+
+.footer-link:hover {
+  color: #4299e1; /* Primary color on hover */
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem; /* Increased gap for better spacing */
+}
+
+.social-link {
+  color: white;
+  font-size: 1.25rem; /* Increased size for better visibility */
+  transition: color 0.3s, transform 0.2s; /* Added transform for scaling effect */
+}
+
+.social-link:hover {
+  color: #4299e1; /* Primary color on hover */
+  transform: scale(1.1); /* Slightly scale the icon on hover */
+}
+
+.footer-bottom {
+  margin-top: 2.5rem; /* Increased margin for spacing */
+  padding-top: 2rem;
+  border-top: 1px solid #4a5568; /* gray-700 */
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.875rem; /* text-sm */
+  color: #d1d5db; /* Slightly lighter color for contrast */
+  margin: 0; /* Remove default margin */
+}

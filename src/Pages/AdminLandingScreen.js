@@ -22,13 +22,7 @@ const AdminLandingScreen = () => {
   };
 
   const handleAddAdmin = () => {
-    if (newAdmin) {
-      setAdmins([...admins, newAdmin]);
-      setNewAdmin('');
-      alert("Admin added successfully.");
-    } else {
-      alert("Please enter admin details.");
-    }
+    navigate ("/components/AddAdmin")
   };
 
   const handleBookAppointment = () => {
