@@ -9,6 +9,7 @@ function Register() {
     lastName: '',
     dob: '',
     address: '',
+    location: '', // Added location field
     state: '',
     country: '',
     mobile: '',
@@ -16,6 +17,7 @@ function Register() {
     password: '',
     confirmPassword: '',
   });
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -71,6 +73,10 @@ function Register() {
           <input type="text" name="address" placeholder="Address" onChange={handleChange} required />
         </div>
         <div className="form-group">
+          <label htmlFor="location">Location*</label>  {/* Added location input below address */}
+          <input type="text" name="location" placeholder="Enter Location" onChange={handleChange} required />
+        </div>
+        <div className="form-group">
           <label htmlFor="state">State*</label>
           <input type="text" name="state" placeholder="State" onChange={handleChange} required />
         </div>
@@ -100,4 +106,4 @@ function Register() {
   );
 }
 
-export default Register
+export default Register;

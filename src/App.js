@@ -10,6 +10,7 @@ import Footer from './Components/Footer';
 import About from './Pages/About';
 import Service from './Pages/Service';
 import Contact from './Pages/Contact';
+import BookingAppointment from './Components/BookingAppointment';
 import FindDoctor from './Components/FindDoctor';
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/Pages/AdminLandingscreen" element={<AdminLandingScreen />} />
         <Route path="/Components/AddDoctor" element={<AddDoctor />} />
         <Route path="/Components/UpdatePatient" element={<UpdatePatient />} />
+        <Route path="/Components/BookingAppointment" element={<BookingAppointment />} />
         <Route path="/Components/FindDoctor" element={<FindDoctor />} />
       </Routes>
       <Footer />

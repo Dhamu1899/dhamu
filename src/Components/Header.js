@@ -8,6 +8,7 @@ import Register from './Register';
 import AddDoctor from './AddDoctor';
 import UpdatePatient from './UpdatePatient';
 import PatientDashboard from './PatientDashboard';
+import BookingAppointment from './BookingAppointment'
 import FindDoctor from './FindDoctor';
 import Navbar from './Navbar'; // Import the Nav component
 const  Header = () => {
@@ -22,6 +23,7 @@ const  Header = () => {
         <Route path="/add-doctor" element={<AddDoctor />} />
         <Route path="/Update-patient" element={<UpdatePatient />} />
         <Route path="/patient-dashboard" element={<PatientDashboard />} />
+        <Route path="/BookingAppointment" element={<BookingAppointment />} />
         <Route path="/find-doctor" element={<FindDoctor />} />
       </Routes>
     </div>

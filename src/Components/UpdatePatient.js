@@ -8,6 +8,7 @@ const UpdatePatient = () => {
     lastName: '',
     dob: '',
     address: '',
+    location: '',  // Added location field
     state: '',
     country: '',
     mobile: '',
@@ -99,6 +100,7 @@ const UpdatePatient = () => {
       lastName: '',
       dob: '',
       address: '',
+      location: '',  // Reset location field
       state: '',
       country: '',
       mobile: '',
@@ -183,6 +185,9 @@ const UpdatePatient = () => {
               <input type='date' name='dob' value={patientDetails.dob} onChange={handleChange} required />
               <label htmlFor='address'>Address*</label>
               <input type='text' name='address' value={patientDetails.address} placeholder="Enter Address"
+                onChange={handleChange} required />
+              <label htmlFor='location'>Location*</label>  {/* Added Location field */}
+              <input type='text' name='location' value={patientDetails.location} placeholder="Enter Location"
                 onChange={handleChange} required />
               <label htmlFor='state'>State*</label>
               <input type='text' name='state' value={patientDetails.state} placeholder="Enter State"

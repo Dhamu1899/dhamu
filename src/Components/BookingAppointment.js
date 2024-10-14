@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import "./BookingForm.css";
+import "./BookingAppointment.css";
 
-const BookingForm = ({ doctor, onClose }) => {
+const BookingAppoinment = ({ doctor, onClose }) => {
     const [selectedSlot, setSelectedSlot] = useState('');
     const [appointmentDate, setAppointmentDate] = useState('');
 
@@ -49,4 +49,4 @@ const BookingForm = ({ doctor, onClose }) => {
     );
 };
 
-export default BookingForm;
+export default BookingAppoinment;
